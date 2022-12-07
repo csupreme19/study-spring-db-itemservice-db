@@ -15,9 +15,15 @@
         where id = #{id}
     </update>
 
-    <select id="findById" resultType="Item">
-        select id, item_name, price, quantity
+    <sql id="find">
+        select id, item_name, price, ${columnName}
         from item
+    </sql>
+
+    <select id="findById" resultType="Item">
+        <include refid="find">
+            <property name="columnName" value="quantity"/>
+        </include>
         where id = #{id}
     </select>
 
