@@ -50,6 +50,6 @@ tasks.named('test') {
 }
 
 // Querydsl 자동 생성된 Q클래스를 지우는 작업 추가
-clean {
-	delete file('src/main/generated')
-}
+//clean {
+//	delete file('src/main/generated')
+//}
